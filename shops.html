@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop Details</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shop.css') }}">
+</head>
+<body>
+    <h1>Shop Details</h1>
+	<div class="photo">
+	<h2>Successfully Sent</h2>
+	<img class="image" src="https://media.tenor.com/6ZkJEn80W7kAAAAS/green-tick.gif">
+	</div>
+	<table>
+		<tr id="header">
+			<th>Name</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>Email</th>
+		</tr>
+		{% for s in shop %}
+		<tr>
+			<td>{{ s["name"] }}</td>
+			<td>{{ s["address"] }}</td>
+			<td>{{ s["phone"] }}</td>
+			<td>{{ s["email"] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

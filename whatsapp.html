@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/whatsapp.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+    <div class="top">
+    <h1>Selected Laptops</h1>
+    </div>
+    <div class="rad">
+    <ul>
+      {% for question in selected %}
+      <li>{{ question }}</li>
+      {% endfor %}
+    </ul>
+    </div>
+    <div class="group">
+    <button onclick="window.location.href='/sendmsg'">Send message</button>
+  </div>
+  </div>
+</div>
+  </body>
+</html>

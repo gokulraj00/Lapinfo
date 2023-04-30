@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Centered Button with Background Animation</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fstyle.css') }}">
+</head>
+<body>
+    <!-- <section class="lapinfo"> -->
+		<video autoplay muted loop>
+			<source src="{{ url_for('static', filename='smoke.mp4') }}" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<section class="lapinfo">
+		<h1>
+			<span>L</span>
+			<span>A</span>
+			<span>P</span>
+			<span>I</span>
+			<span>N</span>
+			<span>F</span>
+			<span>O</span>
+		</h1>
+	   </section>
+	
+	<div class="button-container">
+		<a href="{{ url_for('index') }}">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Lets Go</a>
+	</div>
+</body>
+</htm>
+
+

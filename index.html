@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laptop Selector</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<section id="sry">
+	<h1> Laptop Selector</h1>
+	</section>
+	<div class="container">
+		<form action="{{ url_for('questions') }}" method="post" id="laptop-form">
+			<div class="faq">
+			<div class="question">
+				<label for="budget" >1.What is your budget?</label><br>
+				<svg width="15" height="20" viewBox="0 0 42 25">
+					<path d="M3 3L21 21L39 3"
+					  stroke="white"
+					  stroke-width="7"
+					  stroke-linecap="round"
+					/>
+				</svg>
+				</div>
+				<div class="answer">
+					<input type="radio" id="less-than-500" name="budget" value="less-than-500">
+					<label for="less-than-500">Less than $500</label><br>
+					<input type="radio" id="500-to-1000" name="budget" value="500-to-1000">
+					<label for="500-to-1000">$500-$1000</label><br>
+					<input type="radio" id="1000-to-1500" name="budget" value="more-than-1000">
+					<label for="1000-to-1500">$1000-$1500</label><br>
+					<input type="radio" id="more-than-1500" name="budget" value="more-than-1000">
+					<label for="more-than-1500">More than $1500</label><br>
+			    </div>
+			</div>
+			<div class="faq">	
+			<div class="question">
+				<label for="os">2.What operating system do you prefer?</label><br>
+				<svg width="15" height="20" viewBox="0 0 42 25">
+					<path d="M3 3L21 21L39 3"
+					  stroke="white"
+					  stroke-width="7"
+					  stroke-linecap="round"
+					/>
+				</svg>
+				</div>
+				<div class="answer">
+				<input type="radio" id="os-windows" name="os" value="Windows">
+				<label for="os-windows">Windows</label><br>
+				<input type="radio" id="os-macos" name="os" value="MacOS">
+				<label for="os-macos">macOS</label><br>
+				<input type="radio" id="os-linux" name="os" value="Linux">
+				<label for="os-linux">Linux</label><br>
+			  </div>
+			</div>
+			<div class="faq">
+			<div class="question">
+				<label for="primary_use">3.What will you primarily use the laptop for?</label><br>
+				<svg width="15" height="20" viewBox="0 0 42 25">
+					<path d="M3 3L21 21L39 3"
+					  stroke="white"
+					  stroke-width="7"
+					  stroke-linecap="round"
+					/>
+				</svg>
+				</div>
+				<div class="answer">
+					<input type="radio" id="gaming" name="primary_use" value="Gaming">
+					<label for="gaming">Gaming</label><br>
+					<input type="radio" id="work" name="primary_use" value="Work">
+					<label for="work">Work</label><br>
+					<input type="radio" id="school" name="primary_use" value="School">
+					<label for="school">School</label><br>
+				</div>
+			 </div>
+			 <div class="faq">
+				<div class="question">
+					<label for="battery">4. battery life ?</label><br>
+					<svg width="15" height="20" viewBox="0 0 42 25">
+						<path d="M3 3L21 21L39 3"
+						  stroke="white"
+						  stroke-width="7"
+						  stroke-linecap="round"
+						/>
+					</svg>
+					</div>
+					<div class="answer">
+						<input type="radio" id="not-important" name="battery" value=4>
+						<label for="not-important">~4 hrs</label><br>
+						<input type="radio" id="somewhat-important" name="battery" value=8>
+						<label for="somewhat-important">~8hrs</label><br>
+						<input type="radio" id="very-important" name="battery" value=12>
+						<label for="very-important">~12hrs</label><br>
+					</div>
+				</div>
+				<div class="faq">
+					<div class="question">
+						<label for="ram">5. How much ram do you need?</label><br>
+						<svg width="15" height="20" viewBox="0 0 42 25">
+							<path d="M3 3L21 21L39 3"
+							  stroke="white"
+							  stroke-width="7"
+							  stroke-linecap="round"
+							/>
+						</svg>
+						</div>
+						<div class="answer">
+							<input type="radio" id="4gb" name="ram" value="4GB">
+							<label for="4gb">4GB</label><br>
+							<input type="radio" id="8gb" name="ram" value="8GB">
+							<label for="8gb">8GB</label><br>
+							<input type="radio" id="16gb" name="ram" value="16GB">
+							<label for="16gb">16GB</label><br>
+						</div>
+					</div>
+					<div class="faq">
+						<div class="question">
+							<label for="storage">6. How much storage do you need?</label><br>
+							<svg width="15" height="20" viewBox="0 0 42 25">
+								<path d="M3 3L21 21L39 3"
+								  stroke="white"
+								  stroke-width="7"
+								  stroke-linecap="round"
+								/>
+							</svg>
+							</div>
+							<div class="answer">
+								<input type="radio" id="256gb" name="storage" value="256 GB">
+								<label for="256gb">256GB</label><br>
+								<input type="radio" id="512gb" name="storage" value="512 GB">
+								<label for="512gb">512GB</label><br>
+								<input type="radio" id="1tb" name="storage" value="1 TB">
+								<label for="1tb">1TB</label><br>
+							</div>
+						</div>
+						<div class="faq">
+							<div class="question">
+								<label for="displaysize">7. What size display do you prefer?</label><br>
+								<svg width="15" height="20" viewBox="0 0 42 25">
+									<path d="M3 3L21 21L39 3"
+									  stroke="white"
+									  stroke-width="7"
+									  stroke-linecap="round"
+									/>
+								</svg>
+								</div>
+								<div class="answer">
+									<input type="radio" id="13-inch" name="displaysize" value="13 inch">
+									<label for="13-inch">13 inch</label><br>
+									<input type="radio" id="15-inch" name="displaysize" value="15 inch">
+									<label for="15-inch">15 inch</label><br>
+									<input type="radio" id="17-inch" name="displaysize" value="17 inch">
+									<label for="17-inch">17 inch</label><br>
+							</div>
+						</div>
+							<div class="faq">
+								<div class="question">
+									<label for="weight">8. How important is weight to you?</label><br>
+									<svg width="15" height="20" viewBox="0 0 42 25">
+										<path d="M3 3L21 21L39 3"
+										  stroke="white"
+										  stroke-width="7"
+										  stroke-linecap="round"
+										/>
+									</svg>
+									</div>
+									<div class="answer">
+										<input type="radio" id="below 1kg" name="weight" value=1>
+										<label for="not-important">below 1 kg</label><br>
+										<input type="radio" id="1 to 1.5kg" name="weight" value=1.5>
+										<label for="somewhat-important">1-1.5 kg <label><br>
+										<input type="radio" id="2kg and above" name="weight" value=2>
+										<label for="very-important">2 kg and above</label><br>
+									</div>
+								</div>
+								<!-- <div class="faq">
+									<div class="question">
+										<label for="si">9.what size do you prefer?</label><br>
+										<svg width="15" height="20" viewBox="0 0 42 25">
+											<path d="M3 3L21 21L39 3"
+											  stroke="white"
+											  stroke-width="7"
+											  stroke-linecap="round"
+											/>
+										</svg>
+										</div>
+										<div class="answer">
+											<input type="radio" id="13" name="size" value="13">
+											<label for="13">13 </label><br>
+											<input type="radio" id="15" name="size" value="15">
+											<label for="15">15</label><br>
+											<input type="radio" id="17" name="size" value="17">
+											<label for="17">17</label><br>
+										</div>
+									</div> -->
+
+									<div class="faq">
+										<div class="question">
+											<label for="displayres">9. What size display resolution?</label><br>
+											<svg width="15" height="20" viewBox="0 0 42 25">
+												<path d="M3 3L21 21L39 3"
+												  stroke="white"
+												  stroke-width="7"
+												  stroke-linecap="round"
+												/>
+											</svg>
+											</div>
+											<div class="answer">
+												<input type="radio" id="HD" name="displayres" value="HD">
+												<label for="HD">HD</label><br>
+												<input type="radio" id="FHD" name="displayres" value="FHD">
+												<label for="FHD">FHD</label><br>
+												<input type="radio" id="QHD" name="displayres" value="QHD">
+												<label for="QHD">QHD</label><br>
+										</div>	
+									</div>
+			 <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<!-- Include the script.js file -->
+	<script src="{{ url_for('static', filename='css/script.js') }}"></script>
+</body>
+</html>
+
+

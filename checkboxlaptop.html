@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/checkbox.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="scrollable-area">
+    <!-- <h1>Select the laptops you want to send whatsapp</h1> -->
+    <div class="form-box">
+    <form method="POST" action="{{ url_for('whatsapp') }}">
+ <div class="input">
+  <input type="text" id="name" name="name" required><br>
+  <label for="name" class="chandra" >Name</label>
+ </div>
+ <div class="input">
+  <input type="email" id="email" name="email" required><br>
+  <label for="email" >Email</label>
+</div>
+ <div class="input">
+  <input type="text" id="city" name="city" required><br>
+  <label for="city" >City</label>
+</div>
+<div class="in">
+  <label for="message"></label>
+  <textarea id="message" name="message" placeholder="message for the owners"></textarea><br>
+</div>
+<div class="chec">
+      <ul>
+        {% for question in questions %}
+        <li>
+          <label><input type="checkbox" name="answers" value="{{ question['name'] }}"><span></span>  {{ question['name'] }}
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+</div>
+<div class="group">
+      <input type="submit" value="Submit">
+</div>
+    </form>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='css/check.js') }}"></script>
+
+  </body>
+</html>
+
+
+
+

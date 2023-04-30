@@ -1,0 +1,281 @@
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --gradient:linear-gradient(
+      45deg,
+      #000000,
+      #212A3E,
+      #181823,
+      #181823,
+      #212A3E,
+      #000000
+    );
+  }
+  body{
+    display: flex;
+    background-image: var(--gradient) ;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+
+  }
+  .container {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    background: rgb(0, 0, 0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 32px;
+    overflow: hidden;
+  }
+  
+  .scrollable-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #c2c2c2; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #ffffff; /* creates padding around scroll thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a9a9a9; /* color of the scroll thumb on hover */
+  }
+  
+
+  .item {
+    font-size: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  
+  .container::before{
+    content: "";
+    position: absolute;
+    height: 650px;
+    width: 650px;
+    background: conic-gradient(
+        transparent,transparent,transparent,#e1118a
+    );
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+  }
+  .container::after{
+    content: "";
+    position: absolute;
+    height: 650px;
+    width: 650px;
+    background: conic-gradient(
+        transparent,transparent,transparent,#00cfff
+    );
+    animation: animate 4s linear infinite;
+  }
+  @keyframes animate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+  .scrollable-area{
+    position: absolute;
+    inset: 5px;
+    background-color: #0c1022;
+    z-index: 1;
+    border-radius: 16px;
+  }
+  .form-box{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 60vh;
+  }
+  form .input{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+  }
+  .input input{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 5px;
+    color: #fff;
+    box-sizing: 2px;
+  }
+  
+ .input input:focus ~ label,
+ .input input:valid ~ label{
+    top: -6px;
+    color: rgb(1, 255, 1);
+  }
+  
+  .input label{
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    resize: vertical;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .in label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #999;
+    transition: all 0.3s ease-out;
+  }
+  
+  .in textarea:focus + label,
+  .in textarea:not(:placeholder-shown) + label {
+    transform: translate(0, -30px);
+    font-size: 14px;
+    color: #333;
+  }
+  
+ 
+  
+  .group input[type="submit"] {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #e1118a;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .group input[type="submit"]:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00cfff;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .group input[type="submit"]:hover {
+    background-color: #00cfff;
+    color: #fff;
+  }
+  
+  .group input[type="submit"]:hover:before {
+    transform: translateX(0%);
+  }
+  .chec{
+    color: #fff;
+  }
+  .chec label {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    user-select: none;
+  }
+  
+  .chec input[type="checkbox"] {
+    opacity: 0;
+  }
+  .chec input[type="checkbox"]:checked + label {
+    color: rgb(86, 236, 86);
+  }
+  
+  
+  .chec input[type="checkbox"] + span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 4px;
+    background-color: #fbfbfb;
+  }
+  
+  .chec input[type="checkbox"]:checked + span {
+    background-color: rgb(86, 236, 86);
+  }
+  
+  .chec input[type="checkbox"] + span:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .chec input[type="checkbox"]:checked + span:after {
+    display: block;
+  }
+  
+  .chec input[type="checkbox"] + span:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 5px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .chec input[type="checkbox"]:checked + span:before {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -2px);
+  }

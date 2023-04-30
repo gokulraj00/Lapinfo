@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+	
+   
+{% extends 'base.html' %}
+
+{% block title %}Laptop Recommendations{% endblock %}
+
+{% block content %}
+<div class="lap">
+  <h1 class="mb-4">Laptop Recommendations</h1>
+</div>
+<form method="POST" action="{{ url_for('checkboxlaptop') }}">
+  <div class="group">
+    <input type="submit" value="Find laptop to local place">
+  </div>
+  </form>
+
+  <form method="POST" action="{{ url_for('searchlap') }}">
+    <div class="group">
+      <input type="submit" value="search available laptops">
+    </div>
+    </form>
+
+  {% if laptops %}
+    <div class="laptops-container">
+      {% for laptop in laptops %}
+        <div class="laptop-card">
+          <img src="{{ laptop['image_url'] }}" alt="{{ laptop['name'] }}">
+          <div class="laptop-details">
+            <a href="{{ url_for('static', filename=laptop['url'])}}"><h5>{{ laptop['name'] }}</h5></a>
+            <p>Price: {{ laptop['budget'] }}</p>
+            <p>Operating System: {{ laptop['os'] }}</p>
+            <p>Primary Use: {{ laptop['primary_use'] }}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  {% else %}
+    <div class="sad">
+      <p>No laptops found that match your criteria. 😔</p>
+    </div>
+  {% endif %}
+  {% endblock %}
+</body>
+</html>
+
+
